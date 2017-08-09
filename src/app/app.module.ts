@@ -6,6 +6,9 @@ import { HttpModule } from '@angular/http';
 // import bootstrap
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
+//import Routes
+import { APP_ROUTING } from './app.routes';
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
@@ -24,7 +27,8 @@ import { AboutComponent } from './about/about.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    APP_ROUTING
   ],
   providers: [],
   bootstrap: [AppComponent]
