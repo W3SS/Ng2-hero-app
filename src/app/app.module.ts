@@ -10,10 +10,10 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { APP_ROUTING } from './app.routes';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { NavbarComponent } from './shared/navbar/navbar.component';
-import { HeroesComponent } from './heroes/heroes.component';
-import { AboutComponent } from './about/about.component';
+import { HomeComponent } from './components/home/home.component';
+import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { HeroesComponent } from './components/heroes/heroes.component';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
