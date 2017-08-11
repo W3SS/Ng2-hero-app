@@ -23,12 +23,42 @@ export class HeroesService {
     )
   }
 
-  getHeroesById ( ...args ) {
-    const promises = args.map( id => {
-      return this.getHeroById( id )
-    } )
+  getHeroesById ( ...args ):Promise<any> {
+    let promesa = new Promise( ( resolve, reject ) => {
 
-    return axios.all( promises );
+      const promises = args.map( id => {
+        return this.getHeroById( id )
+      } );
+
+      let heroes = [];
+
+      axios.all( promises ).then( responses => {
+        heroes = responses.map( response => {
+          if ( response.status === 200 ) {
+            let {
+              id,
+              name,
+              description,
+              modified,
+              thumbnail
+            } = response.data.data.results[ 0 ];
+            
+            return {
+              id,
+              name,
+              description,
+              modified,
+              thumbnail
+            };
+          }
+        } );
+
+        resolve( heroes );
+      } );
+
+    } );
+
+    return promesa;
 
   }
 
