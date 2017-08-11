@@ -23,4 +23,13 @@ export class HeroesService {
     )
   }
 
+  getHeroesById ( ...args ) {
+    const promises = args.map( id => {
+      return this.getHeroById( id )
+    } )
+
+    return axios.all( promises );
+
+  }
+
 }
