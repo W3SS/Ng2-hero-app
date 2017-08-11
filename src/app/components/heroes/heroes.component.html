@@ -1,3 +1,10 @@
-<p>
-  heroes works!
-</p>
+<div class="card-columns">
+  <app-card
+    *ngFor="let item of heroes"
+    [image] = "item.thumbnail.path + '.' +item.thumbnail.extension"
+    [title]= "item.name"
+    [text] = "item.description"
+    [modified] = "item.modified"
+    >
+  </app-card>
+</div>
