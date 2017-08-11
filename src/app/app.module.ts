@@ -9,6 +9,9 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 //import Routes
 import { APP_ROUTING } from './app.routes';
 
+//import services
+import { HeroesService } from './services/heroes.service';
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
@@ -32,7 +35,7 @@ import { CardComponent } from './components/shared/card/card.component';
     NgbModule.forRoot(),
     APP_ROUTING
   ],
-  providers: [],
+  providers: [ HeroesService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
